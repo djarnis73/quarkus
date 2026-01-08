@@ -779,6 +779,9 @@ public class QuarkusTestExtension extends AbstractJvmQuarkusTestExtension
         }
 
         initTestState(extensionContext, state);
+        if (actualTestInstance != null) {
+            return (T) actualTestInstance;
+        }
         return result;
     }
 
